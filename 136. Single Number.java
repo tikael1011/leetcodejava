@@ -16,7 +16,7 @@ public class Solution {
 }
 
 
-// use XOR operator, it is comutative!
+// use XOR operator, it is commutative!
 //1 ms
 
 public class Solution {
