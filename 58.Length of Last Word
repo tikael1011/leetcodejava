@@ -40,3 +40,8 @@ public class Solution {
        return count; 
     }
 }
+
+
+//5ms
+
+return s.trim().length()-s.trim().lastIndexOf(" ")-1;
