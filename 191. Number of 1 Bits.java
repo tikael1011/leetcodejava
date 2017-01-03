@@ -5,6 +5,8 @@ For example, the 32-bit integer ’11' has binary representation 000000000000000
 so the function should return 3.
 */
 
+//3 ms
+
 public static int hammingWeight(int n) {
 	int ones = 0;
     	while(n!=0) {
@@ -13,7 +15,8 @@ public static int hammingWeight(int n) {
     	}
     	return ones;
 }
-//3 ms
+
+//2ms
 
 public class Solution{
     public static int hammingWeight(int n) {
@@ -28,9 +31,6 @@ public class Solution{
         return bits;
     }
 }
-//2ms
-
-
 
 
 
