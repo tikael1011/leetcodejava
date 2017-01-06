@@ -17,4 +17,4 @@ word = "SEE", -> returns true,
 word = "ABCB", -> returns false.
 */
 
-//idea is about right but implementation has not yet been finished, save for later. 1/6/17.
+// 1/6/17.reserve
