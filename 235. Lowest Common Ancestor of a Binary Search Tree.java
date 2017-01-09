@@ -15,3 +15,49 @@ be a descendant of itself).”
 For example, the lowest common ancestor (LCA) of nodes 2 and 8 is 6. Another example is LCA of nodes
 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
 */
+
+//check wiki:https://en.wikipedia.org/wiki/Binary_search_tree
+
+//the Key to solve this problem is that the key in each node must be greater than all keys
+//stored in the left sub-tree, and not greater than any key in the right sub-tree
+//http://articles.leetcode.com/determine-if-binary-tree-is-binary/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+//8ms
+public class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+         if(root.val > p.val && root.val > q.val) return lowestCommonAncestor(root.left, p, q);
+        else if(root.val < p.val && root.val < q.val) return lowestCommonAncestor(root.right, p, q);
+        else return root;
+    }
+}
+
+//non-recursive version
+//10ms maybe 9 ms next time?
+public class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while (true) {
+            if (root.val > p.val && root.val > q.val)
+                root = root.left;
+            else if (root.val < p.val && root.val < q.val)
+                root = root.right;
+            else
+                return root;
+        }
+    }
+}
+
+/*
+public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    while ((root.val - (long)p.val) * (root.val - (long)q.val) > 0)
+        root = p.val < root.val ? root.left : root.right;
+    return root;
+}*/
