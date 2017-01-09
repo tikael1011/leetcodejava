@@ -97,7 +97,8 @@ public class Solution {
 
 
 /* The other's work
-//2ms as well. manipulate "Map.put and Set.add return something else"
+//2ms as well. manipulate Set.add also returns a boolean and Map.put returns 
+the previous value associated with key,or null if there was no mapping for key. 
 public boolean wordPattern(String pattern, String str) {
     String[] words = str.split(" ");
     if (words.length != pattern.length())
