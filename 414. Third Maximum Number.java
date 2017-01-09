@@ -63,7 +63,7 @@ public class Solution {
                if(pq.size() > 3 ) pq.poll();
            }
        }
-       if(pq.size() == 2) pq.poll();
+       if(pq.size() == 2) pq.poll();  // if(size <3){while(size >1){pq.poll();}}
        return pq.peek();
     }
 }
