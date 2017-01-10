@@ -135,3 +135,42 @@ public class Solution{
         return -1;
     }
 }
+
+
+//7ms
+
+public class Solution{
+    public int[] searchRange(int[] nums, int target) {
+    
+        int[] result = {-1,-1};
+        if(nums == null || nums.length == 0){
+            return result;
+        }
+        // Binary search to find the left boundary
+        int start = 0;
+        int end = nums.length-1;
+        while(start <= end){
+            int mid = start + (end-start)/2;
+            if(target <= nums[mid] ){
+                if(target == nums[mid])
+                result[0] = mid;
+                end = mid-1;
+            }else{
+                start = mid +1;
+            }
+        }
+       // Binary search to find the right boundary
+        end = nums.length-1;
+        while(start <= end){
+            int mid = start + (end-start)/2;
+            if(target >= nums[mid]){
+                if(target == nums[mid])
+                result[1] = mid;
+                start = mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return result;
+    }
+}
