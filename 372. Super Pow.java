@@ -15,3 +15,5 @@ b = [1,0]
 
 Result: 1024
 */
+
+//https://en.wikipedia.org/wiki/Modular_exponentiation
