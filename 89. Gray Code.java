@@ -20,6 +20,8 @@ For now, the judge is able to judge based on one instance of gray code sequence.
 
 //https://en.wikipedia.org/wiki/Gray_code#Converting_to_and_from_Gray_code
 
+// WTF https://leetcode.com/submissions/detail/89635809/ NOT FOUND
+
 public class Solution {
     public List<Integer> grayCode(int n) {
         List<Integer> res = new ArrayList<>();
@@ -32,4 +34,11 @@ public class Solution {
         }
         return res;
     }
+}
+
+
+public List<Integer> grayCode(int n) {
+    List<Integer> result = new LinkedList<>();
+    for (int i = 0; i < 1<<n; i++) result.add(i ^ i>>1);
+    return result;
 }
