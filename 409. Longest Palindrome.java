@@ -55,12 +55,15 @@ public int longestPalindrome(String s) {
     }
     
     
-//10ms   BEST
+//10ms   
 /*
 Just check for pairs in the String and increment max_length.
 At the end compare the String length and max_length to determine whether the whole string is a palindrome or not.
 O(n) solution.
 */
+
+//why [128]?? not [122]? I understand 52 =26*2 and 58 = 'a'-'A'...
+
 public class Solution {
     public int longestPalindrome(String s) {
         if(s==null|| s.length()==0)
@@ -85,3 +88,18 @@ public class Solution {
         
     }
 }
+
+
+//9ms BEST
+
+
+public int longestPalindrome(String s) {
+        boolean[] map = new boolean[128];
+        int len = 0;
+        for (char c : s.toCharArray()) {
+            map[c] = !map[c];         // flip on each occurrence, false when seen n*2 times
+            if (!map[c]) len+=2;
+        }
+        if (len < s.length()) len++; // if more than len, atleast one single is present
+        return len;
+    }
