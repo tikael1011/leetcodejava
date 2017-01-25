@@ -20,7 +20,7 @@ Bonus points if you could solve it both recursively and iteratively.
 
 
 //1ms
-//recursive
+//Recursive
 //otherwise use stack
 
 
