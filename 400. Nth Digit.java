@@ -56,6 +56,36 @@ In step 2, we will find the target number, which named as number in my code. Fro
 
 Step 3, from step 2, we know index = n % digits = 61 % 3 = 1, which means the target digit is the 1st digit in number. Then, return 1.
 */
+
+public int findNthDigit(int n) 
+    {
+        // step 1. calculate how many digits the number has.
+        long base = 9, digits = 1;
+        while (n - base * digits > 0)
+        {
+            n -= base * digits;
+            base *= 10;
+            digits ++;
+        }
+
+        // step 2. calculate what the muber is.
+        int index = n % digits;
+        if (index == 0)
+            index = digits;
+        long num = 1;
+        for (int i = 1; i < digits; i ++)
+            num *= 10;
+        num += (index == digits) ? n / digits - 1 : n / digits;;
+
+        // step 3. find out which digit in the number is we want.
+        for (int i = index; i < digits; i ++)
+            num /= 10;
+        return num % 10;
+    }
+
+
+
+//similar to first one 
 public int findNthDigit(int n) {
 		int len = 1;
 		long count = 9;
