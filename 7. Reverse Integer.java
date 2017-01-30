@@ -53,6 +53,7 @@ public class Solution {
 //way better than mine
 //37ms
 //89.63%
+//but this take advantage of Long and int so the next solution is better.
 
 public class Solution {
     public int reverse(int x) {
@@ -66,4 +67,23 @@ public class Solution {
         }
         return (int)result;
     }
+}
+
+// in my opinion, the formal solution
+
+public int reverse(int x)
+{
+    int result = 0;
+
+    while (x != 0)
+    {
+        int tail = x % 10;
+        int newResult = result * 10 + tail;
+        if ((newResult - tail) / 10 != result)
+        { return 0; }
+        result = newResult;
+        x = x / 10;
+    }
+
+    return result;
 }
