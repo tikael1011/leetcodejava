@@ -79,8 +79,8 @@ public int reverse(int x)
     {
         int tail = x % 10;
         int newResult = result * 10 + tail;
-        if ((newResult - tail) / 10 != result)
-        { return 0; }
+        if ((newResult - tail) / 10 != result)  // this and the following line deal with the overflow problem
+        { return 0; }                           // since an overflow number can't be recovered.
         result = newResult;
         x = x / 10;
     }
