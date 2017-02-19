@@ -15,7 +15,8 @@ Related problem: Reverse Words in a String II
 
 
 // This solution is wrong at [1,2] k =1 ,but in my eclipse it has the right output???
-
+// 2/17 add for(int i = 0; i < len; i++) nums[i] = res.get(i); !!!
+//7ms...***slow
 
 public class Solution {
     public void rotate(int[] nums, int k) {
