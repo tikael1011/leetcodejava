@@ -44,4 +44,4 @@ public class Solution {
     }
 }
 
-//other method like sort the input then compare the first and last is O(knlogn)...soooooo slow
+//another method: sort the input then compare the first and last is O(knlogn)...soooooo slow..forget it
