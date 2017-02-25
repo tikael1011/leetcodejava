@@ -45,3 +45,22 @@ public class Solution {
 }
 
 //if use hashmap,we can just put "i = map[s[j]] + 1" for the next start positon.
+//40ms
+//97.93%
+
+public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int[] map = new int[256];
+        int max = 0, j = 0;
+        char[] str = s.toCharArray();
+        int length = s.length();
+    
+        for(int i = 0; i < length; i++) {
+            if(map[str[i]] > 0)
+                j =  Math.max(j, map[str[i]]);
+            map[str[i]] = i + 1;
+            max = Math.max(max, i - j + 1);
+        }
+        return max;
+    }
+}
