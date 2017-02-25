@@ -19,8 +19,12 @@ one list is longer;
 
 **/
 
+//70ms
+//10%...
+//but this algothrim is good...
+
 public ListNode addTwoNumbers(ListNode l1, ListNode l2){
-  ListNode dummmyhead = new ListNode(0);
+  ListNode dummyhead = new ListNode(0);
   ListNode p = l1, q = l2, curr = dummyhead;
   int carryover = 0;
   while(p != null || q != null){
