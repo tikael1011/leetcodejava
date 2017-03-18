@@ -27,6 +27,7 @@ private boolean righttree(TreeNope p, int val){
 
 
 //recursion, if the tree does not contains INTEGER.MAX/MIN     O(n) tc ,O(n) space
+//1 ms
 
 public boolean isValidBST(TreeNode root) {
     return valid(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
@@ -44,9 +45,28 @@ public boolean isValidBST(TreeNode root) {
     return valid(root, null, null);
 }
 
-private boolean valid(TreeNope p,Integer low, Integer high){
+private boolean valid(TreeNode p,Integer low, Integer high){
     if (p == null) return true;
     return (low == null || p.val > low) && (high == null || p.val < high) && valid(p.left,low,p.val)
     && valid(p.right,p.val,high);
 }
 
+//in order traversal
+
+//O(n) tc, O(n) space
+
+private TreeNode prev;
+public boolean isValidBST(TreeNode root) {
+    prev = null;
+    return valid(root);
+}
+
+private boolean valid(TreeNope p){
+    if (p == null) return true;
+    if (valid(p.left)){
+        if(prev != null && p.val <= prev.val) return false;
+        prev = p;
+        return valid(p.right);
+    }
+    return false;
+}
