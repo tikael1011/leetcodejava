@@ -1,0 +1,23 @@
+
+/*
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. 
+The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+How many possible unique paths are there?
+*/
+
+private in helper(int r, int c, int m, int n){
+  if(r == m-1 && c == n-1){
+    return 1;
+  }
+  if(r>=m || c >=n){
+    return 0;
+  }
+  return helper(r+1,c,m,n)+ helpper(r, c+1,m,n);
+}
+
+public uniquePath(int m ,int n){
+  return helper(0,0,m,n);
+}
