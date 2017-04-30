@@ -17,3 +17,5 @@ public int climbStaris(int n){
     }
     return q;
 }
+
+//O(n) RC, O(1) SC
