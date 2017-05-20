@@ -10,17 +10,17 @@ How many possible unique paths are there?
 
 // tc: C((m+n)/m), sc O(m+n)
 
-private in helper(int r, int c, int m, int n){
+private int helper(int r, int c, int m, int n){
   if(r == m-1 && c == n-1){
     return 1;
   }
   if(r>=m || c >=n){
     return 0;
   }
-  return helper(r+1,c,m,n)+ helpper(r, c+1,m,n);
+  return helper(r+1,c,m,n)+ helper(r, c+1,m,n);
 }
 
-public uniquePath(int m ,int n){
+public uniquePaths(int m ,int n){
   return helper(0,0,m,n);
 }
 
@@ -51,5 +51,5 @@ public int uniquePaths(int m, int n){
       mat[i][j]= -1;
     }
   }
-  return backtrack(0,0,m,n,mat)
+  return backtrack(0,0,m,n,mat);
 }
