@@ -35,6 +35,7 @@ public class Solution {
 
 //more elegant way
 
+//for this one ,using swtich is faster...
 public boolean isValid(String s) {
     // add if s.length is odd, return false
 	Stack<Character> stack = new Stack<Character>();
