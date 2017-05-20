@@ -32,3 +32,34 @@ public class Solution {
         
     }
 }
+
+//more eleant way
+
+public boolean isValid(String s) {
+    // add if s.length is odd, return false
+	Stack<Character> stack = new Stack<Character>();
+	for (char c : s.toCharArray()) {
+		if (c == '(')
+			stack.push(')');
+		else if (c == '{')
+			stack.push('}');
+		else if (c == '[')
+			stack.push(']');
+		else if (stack.isEmpty() || stack.pop() != c)
+			return false;
+	}
+	return stack.isEmpty();
+}
+
+public class Solution {
+    public boolean isValid(String s) {
+        Stack<Integer> p = new Stack<>();
+        for(int i = 0; i < s.length(); i++) {
+            int q = "(){}[]".indexOf(s.substring(i, i + 1));
+            if(q % 2 == 1) {
+                if(p.isEmpty() || p.pop() != q - 1) return false;
+            } else p.push(q);
+        }
+        return p.isEmpty();
+    }
+}
