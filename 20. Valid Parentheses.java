@@ -33,7 +33,7 @@ public class Solution {
     }
 }
 
-//more eleant way
+//more elegant way
 
 public boolean isValid(String s) {
     // add if s.length is odd, return false
