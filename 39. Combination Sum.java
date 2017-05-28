@@ -41,3 +41,37 @@ public class Solution {
         }
     }
 }
+
+//triditional backtracking
+//30ms, 23%
+
+public class Solution {
+	public List<List<Integer>> combinationSum(int[] candidates, int target) {
+		List<List<Integer>> solution = new ArrayList<List<Integer>>();
+		List<Integer> curSolution = new ArrayList<Integer>();
+		Arrays.sort(candidates);
+		backTrack(solution, curSolution,candidates, target, 0); 
+		return solution;
+	}
+
+	private void backTrack(List<List<Integer>> solution,List<Integer> curSolution,int[] candidates, int target, int lastIdx) {
+		if (target == 0) {
+			solution.add(new ArrayList<>(curSolution));
+		}
+		else if (target < 0) {
+			return;
+		}
+		else {
+			int i = lastIdx;
+			while (i < candidates.length) {
+				int candidate = candidates[i];
+				curSolution.add(candidate);
+				backTrack(solution,curSolution,candidates, target - candidate, i);
+				curSolution.remove(curSolution.size() - 1);
+				while (i < candidates.length && candidates[i] == candidate) {
+					i++;
+				}
+			}
+		}
+    }
+}
