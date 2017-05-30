@@ -14,6 +14,11 @@ A solution set is:
 ]
 */
 
+/**
+more than 4 methods , dfs, backtracking, avoid set, dp
+*/
+
+
 //using reverse order can make things easier and faster
 //everytime make a copy of the orignal with the left element
 
@@ -117,6 +122,10 @@ less or equal to t in ascending order. For each candidate "c" we run through all
 combinations for target t-c starting with the value greater or equal than c to 
 avoid duplicates and store only ordered combinations.
 */
+//32ms
+//17%
+
+
 public class Solution {
     public List<List<Integer>> combinationSum(int[] cands, int t) {
         Arrays.sort(cands); // sort candidates to try them in asc order
