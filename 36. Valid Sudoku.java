@@ -7,7 +7,7 @@ A valid Sudoku board (partially filled) is not necessarily solvable. Only the fi
 
 /**
 The key of this problem is to 'discvoer' %3 and /3,
-Otherwise code can be chambersum.
+Otherwise code can be cumbersome.
 */
 
 public boolean isValidSudoku(char[][] board) {
