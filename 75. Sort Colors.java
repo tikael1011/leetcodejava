@@ -66,3 +66,28 @@ void sortColors(int A[], int n) {
     for(int i = 0; i < num1; ++i) A[num0+i] = 1;
     for(int i = 0; i < num2; ++i) A[num0+num1+i] = 2;
 }
+
+
+
+//more generalized version ,for N colors.
+
+public class Solution {
+    public void sortColors(int[] nums) {
+        int[] cand = {0, 1, 2};
+        int start=0;
+        for(int i=0;i<3;i++){
+            while(start<nums.length && nums[start]==cand[i]) start++;
+            for(int j=start;j<nums.length;j++){
+                if(nums[j]==cand[i]){
+                    swap(nums, j, start++);
+                }
+            }
+        }
+        return;
+    }
+    public void swap(int[] nums, int a, int b){
+        int t = nums[a];
+        nums[a] = nums[b];
+        nums[b] = t;
+    }
+}
