@@ -8,6 +8,9 @@ It will automatically contact the police if two directly-linked houses were brok
 Determine the maximum amount of money the thief can rob tonight without alerting the police.
 */
 
+//recursive is straightforward but waywayway slow. DFS. DP
+
+
 public int rob(TreeNode root) {
     int[] maxVal = dpRob(root);
     return Math.max(maxVal[0], maxVal[1]);
