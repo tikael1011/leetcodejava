@@ -27,3 +27,13 @@ Explanation: You have 2 children and 3 cookies. The greed factors of 2 children 
 You have 3 cookies and their sizes are big enough to gratify all of the children, 
 You need to output 2.
 */
+
+// the cost is 2 * NlogN + N -> NlogN
+
+Arrays.sort(g);
+Arrays.sort(s);
+int i = 0;
+for(int j=0;i<g.length && j<s.length;j++) {
+	if(g[i]<=s[j]) i++;
+}
+return i;
