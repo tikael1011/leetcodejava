@@ -21,6 +21,7 @@ return
 
 
 //The idea is dfs, personaly I like the second since it explictly point out when root.left or root.right == null
+// or, we can use post-order traversal interation version, but I believe recursion version is more concise
 
 public List<List<Integer>> pathSum(TreeNode root, int sum) {
     List<List<Integer>>ret = new ArrayList<List<Integer>>(); 
