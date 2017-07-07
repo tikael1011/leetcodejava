@@ -17,6 +17,7 @@ as extra space for the purpose of space complexity analysis.)
 // can be writed in one for loop, but there is no need to do that and two loops is more explicit.
 //and I think this shoud be treated as easy.
 
+//should we take care of integer overflow??
 
 
 public int[] productExceptSelf(int[] nums) {
