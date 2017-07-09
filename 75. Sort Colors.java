@@ -19,6 +19,12 @@ Could you come up with an one-pass algorithm using only constant space?
 
 //The key is to find a way to partition the array
 
+//there are several thoughts:
+// 1. counting sort, count the number of differnt color and then rebuild them
+// 2. swap based ,based on number of different color.
+// 3. non-generalized version, put every '0' at front and put every '2' to the end. 
+
+
 public void sortColors(int A[], int n) {
     int n0 = -1, n1 = -1, n2 = -1;
     for (int i = 0; i < n; ++i) {
@@ -41,7 +47,7 @@ public void sortColors(int A[], int n) {
 
 def sortColors(self, nums):
     i = j = 0
-    for k in xrange(len(nums)):
+    for k in range(len(nums)):
         v = nums[k]
         nums[k] = 2
         if v < 2:
