@@ -30,3 +30,26 @@ are non-negative integers, which won't exceed 10,000,000.
 */
 
 // this is the overlapping problem.
+
+    public int findPoisonedDuration(int[] timeSeries, int duration) {
+        if (timeSeries.length == 0) return 0;
+        int begin = timeSeries[0], total = 0;
+        for (int t : timeSeries) {
+            total = total + (t < begin + duration ? t - begin : duration);
+            begin = t;
+        }   
+        return total + duration;
+    } 
+
+
+//or the smaller (min) method:
+public class Solution {
+    public int findPoisonedDuration(int[] timeSeries, int duration) {
+        int res=0;
+        if(timeSeries==null||timeSeries.length==0||duration<=0) return res;
+        for(int i=1;i<timeSeries.length;i++){
+            res+=Math.min(duration, timeSeries[i]-timeSeries[i-1]);
+        }
+        return res+duration;
+    }
+}
