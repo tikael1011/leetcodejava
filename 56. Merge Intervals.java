@@ -12,6 +12,8 @@ return [1,6],[8,10],[15,18].
 //either keep one array or into two arrays, one for start, the other for end
 //and then the left part's logic is trivial.
 
+//and since we use comparator sort, RC is O(nlogn)
+
 //two arrays
 public List<Interval> merge(List<Interval> intervals) {
 	// sort start&end
