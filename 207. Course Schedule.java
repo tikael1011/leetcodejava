@@ -15,3 +15,41 @@ There are a total of 2 courses to take. To take course 1 you should have finishe
 There are a total of 2 courses to take. To take course 1 you should have finished course 0,
 and to take course 0 you should also have finished course 1. So it is impossible.
 */
+
+
+//topological sort
+//either BFS or dfs
+
+//BFS
+public class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        Map<Integer, ArrayList<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
+        int[] indegree = new int[numCourses];
+        Queue<Integer> queue = new LinkedList<Integer>();
+        int count = numCourses;
+        for (int i = 0; i < numCourses; i++) {
+            map.put(i, new ArrayList<Integer>());
+        }
+        for (int i = 0; i < prerequisites.length; i++) {
+            map.get(prerequisites[i][0]).add(prerequisites[i][1]);
+            indegree[prerequisites[i][1]]++;
+        }
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+        while (!queue.isEmpty()) {
+            int current = queue.poll();
+            for (int i : map.get(current)) {
+                if (--indegree[i] == 0) {
+                    queue.offer(i);
+                }
+            }
+            count--;
+        }
+        return count == 0;
+    }
+}
+
+// dfs maybe a little bit easier to understand?
