@@ -73,3 +73,5 @@ def majorityElement(self, nums):
     return [n for n in (candidate1, candidate2)
                     if nums.count(n) > len(nums) // 3]
 */
+
+// we can also utilize the collection.Counter ,but not necessarily to do so
