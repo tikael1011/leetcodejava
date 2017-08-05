@@ -24,3 +24,7 @@ part, always remove the lastIndex of element, which thereby achieves O(1).
 /*
 Also notice that, the word average: you never know if there is a collison in hashcode or not, do you?
 */
+
+/*
+additionally, how 'random' is tested may also affect your implementation
+*/
