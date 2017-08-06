@@ -11,4 +11,4 @@
 [hr] == IMHO, harder than the indicated difficulty
 
 Planning to group by problem type/methods, like math, DP, DFS, Bit manipulation, Sorting.
-But there is a problem that one problem may contain multi labels and I want them only appear one.
+But there is a problem that one problem may contain multi labels. But at least the difficulty does not matter that much.
