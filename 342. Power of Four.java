@@ -19,3 +19,6 @@ public class Solution {
     }
 }
 */
+
+
+//remember, '==' has higher priority than '&'
