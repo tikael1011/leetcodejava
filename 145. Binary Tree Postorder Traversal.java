@@ -13,8 +13,9 @@ return [3,2,1].
 Note: Recursive solution is trivial, could you do it iteratively?
 */
 
+
 //remind me the use of Deque(double end queue) and other method in it,
-//whether return false/null or throws exception.
+//whether return false/null or throws exception. addFirst/offerFirst, remove/pop...
 
 
 public List<Integer> postorderTraversal(TreeNode root) {
