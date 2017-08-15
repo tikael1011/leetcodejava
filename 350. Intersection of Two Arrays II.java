@@ -18,7 +18,7 @@ cannot load all elements into the memory at once?
 
 /*
 The solution's rc is O(m + n), just counting.
-for F1, can use two pointers instead, but not necessarily improve performance,
+for F1, can use two pointers instead, O(m), (suppose m is larger than n, m corresponse to num1.length)
 for F2, just switch num1 and nums2, use 'shorter' 'hash' .
 for F3, external sort.
 
