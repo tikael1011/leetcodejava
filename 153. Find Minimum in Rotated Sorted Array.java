@@ -12,6 +12,9 @@ You may assume no duplicate exists in the array.
 
 //It happens to be a standard binary search problem.
 //if nums[mid] < nums[right], min is in the left part, and otherwise in the right part.
+//simliar to 33.
+
+
 class Solution {
     public int findMin(int[] nums) {
         int low = 0;
