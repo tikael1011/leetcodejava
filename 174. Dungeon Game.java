@@ -45,3 +45,6 @@ class Solution {
     return dungeon[0][0];
     }
 }
+
+//if use extra space, we can use a [m+1][n+1] size array. this means one dummy row and one column, and we can thereby
+//remove the initiate outside for loop. But this is not necessary, [m][n] can do the job.
