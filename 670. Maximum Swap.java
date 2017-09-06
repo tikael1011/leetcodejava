@@ -12,6 +12,9 @@ Output: 9973
 Explanation: No swap.
 */
 
+
+//name is .java, actually is Python,lol
+
 //test cases I failed (similar): 10909091,1993.
 
 // n^2 solution, silly... 62ms
