@@ -21,7 +21,13 @@ Example 2:
 //pain ***.
 
 /*
-Python
+Python, this solution is NOT optimal, especially something like:
+01010101
+10101010
+01010101
+10101010
+
+every time map() is invoked, it made duplicate scan on previous cells.
 
 def numIslands(self, grid):
     def sink(i, j):
