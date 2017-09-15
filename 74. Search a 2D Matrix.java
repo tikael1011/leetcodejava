@@ -48,3 +48,28 @@ class Solution {
 //while a 'safer' way is that we can search on row then into column. O(lg(mn)) as well and theoritically same speed
 //but in practice, should be faster.
 //Extra Testing requested.
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        //deal with null, {null}, {{}}
+        if(matrix == null || matrix.length == 0 || matrix[0].length == 0) return false;
+         
+        int r=matrix.length , c=matrix[0].length,mid;
+        if(target < matrix[0][0] || target > matrix[r-1][c-1]) return false;
+        int s=0 , e=r-1; 
+        while(s <= e){
+            mid =s+ (e-s)/2;
+            if (matrix[mid][c-1] == target) return true;
+            else if(matrix[mid][c-1] < target) s = mid+1;
+            else  e = mid-1;
+        }
+
+        int left = 0, right = c-1;
+        while(left <= right){
+            mid = left + (right-left)/2;
+            if(matrix[s][mid] == target) return true;
+            else if(matrix[s][mid] > target) right = mid-1;
+            else left = mid+1;
+        }
+        return false; 
+    }
+}
