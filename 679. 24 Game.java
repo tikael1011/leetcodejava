@@ -28,7 +28,7 @@ class Solution {
     
     private boolean f(double[] a) {
         if (a.length == 1) {
-            return a[0] == 24;
+            return Math.abs(a[0] - 24)<0.01;
         }
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
