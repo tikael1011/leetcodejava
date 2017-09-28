@@ -9,6 +9,24 @@ Given "aacecaaa", return "aaacecaaa".
 Given "abcd", return "dcbabcd".
 */
 
+//https://discuss.leetcode.com/topic/21068/my-7-lines-recursive-java-solution
+// I believe the rc is O(2n)-> O(n).while sc is O(n) as well.
+
+class Solution {
+    public String shortestPalindrome(String s) {
+        int j = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == s.charAt(j)) { j += 1; }
+        }
+        if (j == s.length()) { return s; }
+        String suffix = s.substring(j);
+        return new StringBuffer(suffix).reverse().toString() + shortestPalindrome(s.substring(0, j)) + suffix;
+    }
+}
+
+
+
+/* The following might get TLE
 //KMP
 
 
@@ -23,3 +41,4 @@ public String shortestPalindrome(String s) {
     }
     return new StringBuilder(s.substring(end+1)).reverse().toString() + s;
 }
+*/
