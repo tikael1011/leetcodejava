@@ -19,15 +19,17 @@ The total number of unique paths is 2.
 
 // similar to unique path, the bottom-up dp
 
-public int uniquePathWithObstacle(int[][] obs){
-  int m = obs.length;
-  int n = obs[0].length;
-  int mat = new int[m+1][n+1];
-  mat[m-1][n] = 1;
-  for(int r = m - 1; r >= 0; r--){
-    for(int s = n - 1; s >= 0; s--){
-      mat[r][s] = (obs[r][s] == 1)? 0 : mat[r][s+1] + mat[r+1][s];  
+class Solution {
+    public int uniquePathsWithObstacles(int[][] obs) {
+        int m = obs.length;
+        int n = obs[0].length;
+        int[][] mat = new int[m+1][n+1];
+        mat[m-1][n] = 1;
+        for(int r = m - 1; r >= 0; r--){
+            for(int s = n - 1; s >= 0; s--){
+                mat[r][s] = (obs[r][s] == 1)? 0 : mat[r][s+1] + mat[r+1][s];  
+            }
+        }
+      return mat[0][0];
     }
-  }
-  return mat[0][0];
 }
