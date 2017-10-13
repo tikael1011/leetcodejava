@@ -38,3 +38,43 @@ Output: "Neither"
 
 Explanation: This is neither a IPv4 address nor a IPv6 address.
 */
+
+//two ways, one is judge one block by one block,
+//the other one is using regx to cover all the cases, since regx is a little tricky to use, I perfer the former one,
+//and it is easier to understand.
+
+ class Solution(object):
+    def validIPAddress(self, IP):
+        
+        def isIPv4(s):
+            try: return str(int(s)) == s and 0 <= int(s) <= 255
+            except: return False
+            
+        def isIPv6(s):
+            if len(s) > 4: return False
+            try: return int(s, 16) >= 0 and s[0] != '-' # dealwith signed numbers
+            except: return False
+
+        if IP.count(".") == 3 and all(isIPv4(i) for i in IP.split(".")): 
+            return "IPv4"
+        if IP.count(":") == 7 and all(isIPv6(i) for i in IP.split(":")): 
+            return "IPv6"
+        return "Neither"
+              
+/*
+import java.util.regex.*;
+public class Solution {
+    public String validIPAddress(String IP) {
+        Pattern p1 = Pattern.compile("((([1-9]?|1\\d|2[0-4])\\d|25[0-5])\\.){3}(([1-9]?|1\\d|2[0-4])\\d|25[0-5])");
+        Pattern p2 = Pattern.compile("(?i)([0-9a-f]{1,4}:){7}([0-9a-f]){1,4}");
+        
+        Matcher m1 = p1.matcher(IP);
+        if (m1.matches()) return "IPv4";
+ 
+        Matcher m2 = p2.matcher(IP);
+        if (m2.matches()) return "IPv6";
+        
+        return "Neither";
+    }
+}
+*/
