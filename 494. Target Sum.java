@@ -24,6 +24,8 @@ Your output answer is guaranteed to be fitted in a 32-bit integer.
 
 */
 
+//simple DFS, slowest, but somehow easiest understand
+
 public class Solution {
     int result = 0;
 	
@@ -59,7 +61,7 @@ private int dfs(int[] nums, int sum, int target, int k) {
 }
 */
 
-//one optimisizon, earlier return
+//one optimisizon, earlier return, at least 2 times faster
 
 public class Solution {
     int result = 0;
@@ -119,7 +121,7 @@ public class Solution {
 }
 
 
-//DP
+//DP, fastest, like 10 times better than simple dfs but require some understanding.
 
 public class Solution {
     public int findTargetSumWays(int[] nums, int s) {
