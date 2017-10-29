@@ -27,7 +27,7 @@ Explanation: Remove all the digits from the number and it is left with nothing w
 //8ms
 //90%
 
-//use stack can achieve O(n), while without stack, the most straightfoward one has O(k*n)
+//the idea is to use a stack, no matter a real stack or array, same sc O(n), the most straightfoward one has O(k*n)
 //no DP? My  though is that for every moved digit, the remaining is the smallest one...
 
 
@@ -82,3 +82,16 @@ public class Solution {
         return s.length() == 0 ? "0" : s;
     }
 }
+
+
+/* Python
+
+def removeKdigits(self, num, k):
+    out = []
+    for d in num:
+        while k and out and out[-1] > d:
+            out.pop()
+            k -= 1
+        out.append(d)
+    return ''.join(out[:-k or None]).lstrip('0') or '0'
+*/
