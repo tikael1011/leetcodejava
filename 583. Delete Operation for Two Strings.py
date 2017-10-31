@@ -1,4 +1,4 @@
-/*
+'''
 Given two words word1 and word2, find the minimum number of steps required to make word1 and word2 the same, where in each step you can delete one character in either string.
 
 Example 1:
@@ -8,14 +8,17 @@ Explanation: You need one step to make "sea" to "ea" and another step to make "e
 Note:
 The length of given words won't exceed 500.
 Characters in given words can only be lower-case letters.
-*/
+'''
 
-//This is a variant of the classic dp problem (72. edit distance)
+'''
+This is a variant of the classic dp problem (72. edit distance)
 
-//and there are at least two dp thoughts, one is the find the LCS(longest common subsequence) and the other
-//is bottom-up dp, calcuate the cost(ans) directly, which is almost the same from No.72.
+and there are at least two dp thoughts, one is the find the LCS(longest common subsequence) and the other
+is bottom-up dp, calcuate the cost(ans) directly, which is almost the same from No.72.
+'''
 
-//Thought No.1 43.86%
+
+## Thought No.1 43.86%
 
 def minDistance(self, w1, w2):
       m, n = len(w1), len(w2)
@@ -26,7 +29,7 @@ def minDistance(self, w1, w2):
       return m + n - 2 * dp[m][n]
       
       
-//Thought Np.2 75%
+## Thought No.2 75%
 
 class Solution(object):
     def minDistance(self, A, B):
