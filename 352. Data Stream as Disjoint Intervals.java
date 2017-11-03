@@ -55,37 +55,45 @@ public class SummaryRanges {
 
 //..Following is python setup.
 
+/*
+## It works for Py2 only, I am not able to figure out why. the error is Type Error: unoderable type Interval() < Interval()
+## yet I pushed a tuple instead of a customized class, WHY?
+
+
+*/
+
 # Definition for an interval.
-# class Interval:
+# class Interval(object):
 #     def __init__(self, s=0, e=0):
 #         self.start = s
 #         self.end = e
 
-
 class SummaryRanges(object):
 
-  def __init__(self):
-    self.intervals = []
-  
-  def __lt__(self, other):
-    if isinstance(other, self.__class__):
-        return self.distance < other.distance
-    return NotImplemented
-  
-  def addNum(self, val):
-    heapq.heappush(self.intervals, (val, Interval(val, val)))
+    def __init__(self):
+        self.intervals = []
     
-  def getIntervals(self):
-    stack = []
-    while self.intervals:
-        idx, cur = heapq.heappop(self.intervals)
-        if not stack:
-            stack.append((idx, cur))
-        else:
-            _, prev = stack[-1]
-            if prev.end + 1 >= cur.start:
-                prev.end = max(prev.end, cur.end)
-            else:
+    def addNum(self, val):
+        heapq.heappush(self.intervals, (val, Interval(val, val)))
+    
+    def getIntervals(self):
+        stack = []
+        while self.intervals:
+            idx, cur = heapq.heappop(self.intervals)
+            if not stack:
                 stack.append((idx, cur))
-    self.intervals = stack
-    return list(map(lambda x: x[1], stack))
+            else:
+                _, prev = stack[-1]
+                if prev.end + 1 >= cur.start:
+                    prev.end = max(prev.end, cur.end)
+                else:
+                    stack.append((idx, cur))
+        self.intervals = stack
+        return list(map(lambda x: x[1], stack))
+
+
+
+# Your SummaryRanges object will be instantiated and called as such:
+# obj = SummaryRanges()
+# obj.addNum(val)
+# param_2 = obj.getIntervals()
