@@ -1,3 +1,17 @@
+//Update 11/2
+//My idea is doable.
+//similar code in python can refer to:
+//https://discuss.leetcode.com/topic/103699/python-intuitive-solution-using-dictionary
+/* Disclaimer*/
+/*
+I did not test his code, not even put it in the OJ. There are main two reasons:
+One is a programmer can barely learn from copy-paste.
+The other is that I found at least one bug in his code and not specifying py2 or py3 is bad, IMHO.
+*/
+
+
+
+/******************************/
 /*
 Implement a magic directory with buildDict, and search methods.
 
@@ -92,3 +106,5 @@ terms of searching, determining one-modify is easy for only one word and can be 
 but the problem is that in worst case, we have to go through the whole hashset to return a
 'false' (true can be return early since it is a stop-search sign.) So this thought is NOT good.
 I will try to come up another mind and implement it before I come back and update this file. */
+
+
