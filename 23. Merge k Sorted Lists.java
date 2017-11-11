@@ -52,7 +52,8 @@ class Solution {
 
 /*
 another implementation
-from : https://discuss.leetcode.com/topic/2780/a-java-solution-based-on-priority-queue/5?page=1
+source : https://discuss.leetcode.com/topic/2780/a-java-solution-based-on-priority-queue/5?page=1
+modified to adapt array input instead of list
 
 public class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -78,12 +79,12 @@ public class Solution {
         
     }
     
-    public ListNode mergeKLists(List<ListNode> lists) {
-        if (lists.size()==0) return null;
-        if (lists.size()==1) return lists.get(0);
-        if (lists.size()==2) return mergeTwoLists(lists.get(0), lists.get(1));
-        return mergeTwoLists(mergeKLists(lists.subList(0, lists.size()/2)), 
-            mergeKLists(lists.subList(lists.size()/2, lists.size())));
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length==0) return null;
+        if (lists.length==1) return lists[0];
+        if (lists.length==2) return mergeTwoLists(lists[0], lists[1]);
+        return mergeTwoLists(mergeKLists(Arrays.copyOfRange(lists,0, lists.length/2)), 
+            mergeKLists(Arrays.copyOfRange(lists,lists.length/2, lists.length)));
     }
 }
 */
