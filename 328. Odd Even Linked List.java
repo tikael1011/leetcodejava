@@ -13,7 +13,7 @@ The relative order inside both the even and odd groups should remain as it was i
 The first node is considered odd, the second node even and so on ...
 */
 
-//idea is simply, one list of odd, one list of even , odd list tail.next = even list.head
+//idea is simple, one list of odd, one list of even , odd list tail.next = even list.head
 
 /**
  * Definition for singly-linked list.
