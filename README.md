@@ -15,3 +15,5 @@
 
 Planning to group by problem type/methods, like math, DP, DFS, Bit manipulation, Sorting.
 But there is a problem that one problem may contain multi labels. But at least the difficulty does not matter that much.
+
+I bought leetcode subscription and that's why I have access to the locked questions, yet I will not them public.
