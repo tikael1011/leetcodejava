@@ -23,3 +23,42 @@ All elements in nums1 and nums2 are unique.
 The length of both nums1 and nums2 would not exceed 1000.
 
 */
+
+// O(n^2) solution, this one is a bit easier to come up with.
+
+public int[] nextGreaterElement(int[] findNums, int[] nums) {
+    Map<Integer, Integer> m = new HashMap<>();
+    for(int i =0;i<nums.length;++i)
+        m.put(nums[i],i);
+    for(int i=0;i<findNums.length;++i)
+    {
+        int minIndex =-1;
+        int index = m.get(findNums[i]);
+        while(++index < nums.length) 
+        {
+            if(nums[index]>findNums[i])
+            {
+                minIndex =index;
+                break;
+            }
+        }
+        if(minIndex ==-1) findNums[i] = -1;
+        else findNums[i] = nums[minIndex];
+    }
+    return findNums;
+}
+
+// O(n), using a stack, every element will be pushed and popped at most once.
+
+public int[] nextGreaterElement(int[] findNums, int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>(); // map from x to next greater element of x
+        Stack<Integer> stack = new Stack<>();
+        for (int num : nums) {
+            while (!stack.isEmpty() && stack.peek() < num)
+                map.put(stack.pop(), num);
+            stack.push(num);
+        }   
+        for (int i = 0; i < findNums.length; i++)
+            findNums[i] = map.getOrDefault(findNums[i], -1);
+        return findNums;
+    }
