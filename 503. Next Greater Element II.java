@@ -12,3 +12,7 @@ The number 2 can't find next greater number;
 The second 1's next greater number needs to search circularly, which is also 2.
 Note: The length of given array won't exceed 10000.
 */
+
+//the solution is from https://discuss.leetcode.com/topic/77881/typical-ways-to-solve-circular-array-problems-java-solution
+
+//both the O(n^2) one and the O(n) one.
