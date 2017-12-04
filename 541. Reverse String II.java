@@ -32,3 +32,11 @@ class Solution {
         }
     }
 }
+/*
+python
+
+def reverseStr(self, s, k):
+    for i in range(0, len(s), 2*k):
+        s[i:i+k] = reversed(s[i:i+k])
+    return "".join(s)
+*/
