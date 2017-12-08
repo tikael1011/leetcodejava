@@ -1,4 +1,4 @@
-/*
+'''
 
 We are given an array asteroids of integers representing asteroids in a row.
 
@@ -38,4 +38,19 @@ Asteroids moving the same direction never meet, so no asteroids will meet each o
 Note:
 
 The length of asteroids will be at most 10000.
-Each asteroid will be a non-zero integer in the range [-1000, 1000]..*/
+Each asteroid will be a non-zero integer in the range [-1000, 1000].
+'''
+# there is one tricky part, which is One big asteroid may collide more than once.
+
+class Solution(object):
+    def asteroidCollision(self, asteroids):
+        a=asteroids
+        while True:
+            i,n=0,len(a)
+            while i<len(a)-1:
+                if a[i]*a[i+1]>0 or a[i]<0<a[i+1]: i+=1# will not collide
+                elif a[i]>-a[i+1]: del a[i+1] # a[i+1] explodes             
+                elif a[i]==-a[i+1]: del a[i:i+2] # both explode
+                else: del a[i] # a[i] explodes
+            if len(a)==n: break # no change after one scan
+        return a
