@@ -2,9 +2,13 @@
 
 [i] == important
 
-[p] == there is(are) problem(s) left
+[d] == design involved
 
 [e] == extra info/knowledge in comments
+
+[p] == there is(are) problem(s) left
+
+
 
 [r] == extra testing/proof requested, tbc
 
